@@ -1,5 +1,5 @@
 ---
-vmware_root_pass: Painatal1@
+vmware_root_pass: Root123$
 vmware_root_user: root
 vmware_hostname: 192.168.100.128
 vmware_vm_name: testvm_12
