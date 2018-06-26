@@ -8,7 +8,8 @@
     password: "{{ vmware_root_pass }}"
     validate_certs: no
     folder: /
-    name: "{{ vmware_vm_name }}"
+    name: "{{ vm_names[0] }}"
+#    name: "{{ vmware_vm_name }}"
     guest_id: "{{ vmware_vm_guest_id }}"
     state: poweredon
     cdrom:
