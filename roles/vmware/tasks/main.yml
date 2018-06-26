@@ -1,30 +1,28 @@
 ---
 - name: Create a VM
-    vmware_guest:
-      hostname: "{{ vmware_hostname }}"
-      customization:
-        hostname: "{{ vmware_vm_name }}"
-      username: "{{ vmware_root_user }}"
-      password: "{{ vmware_root_pass }}"
-      validate_certs: no
-      folder: /
-      name: "{{ vmware_vm_name }}"
-      guest_id: "{{ vmware_vm_guest_id }}"
-      state: poweredon
-      cdrom:
-        type: iso
-        iso_path: "{{ vmware_vm_iso_path }}"
-      disk:
-      - size_gb: "{{ vmware_vm_disk_size }}"
-        type: "{{ vmware_vm_disk_type }}"
-        datastore: "{{ vmware_datastore }}"
-      hardware:
-        memory_mb: "{{ vmware_vm_memory }}"
-        num_cpus: "{{ vmware_vm_num_cpus }}"
-        num_cpu_cores_per_socket: "{{ vmware_vm_num_cpus_socket }}"
-        scsi: "{{ vmware_vm_scsi }}"
-      networks:
-      -  name: VM Network
-      wait_for_ip_address: "{{ vmware_vm_network_name }}"
-      delegate_to: localhost
-      register: deploy
+  vmware_guest:
+    hostname: "{{ vmware_hostname }}"
+    customization:
+      hostname: "{{ vmware_vm_name }}"
+    username: "{{ vmware_root_user }}"
+    password: "{{ vmware_root_pass }}"
+    validate_certs: no
+    folder: /
+    name: "{{ vmware_vm_name }}"
+    guest_id: "{{ vmware_vm_guest_id }}"
+    state: poweredon
+    cdrom:
+      type: iso
+      iso_path: "{{ vmware_vm_iso_path }}"
+    disk:
+    - size_gb: "{{ vmware_vm_disk_size }}"
+      type: "{{ vmware_vm_disk_type }}"
+      datastore: "{{ vmware_datastore }}"
+    hardware:
+      memory_mb: "{{ vmware_vm_memory }}"
+      num_cpus: "{{ vmware_vm_num_cpus }}"
+      num_cpu_cores_per_socket: "{{ vmware_vm_num_cpus_socket }}"
+      scsi: "{{ vmware_vm_scsi }}"
+    networks:
+    -  name: "{{ vmware_vm_network_name }}"
+    wait_for_ip_address: no
