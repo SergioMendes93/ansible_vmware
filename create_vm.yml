@@ -29,5 +29,5 @@
         num_cpu_cores_per_socket: "{{ vmware_vm_num_cpus_socket }}"
         scsi: "{{ vmware_vm_scsi }}"
       networks:
-      -  name: VM Network
+      -  name: "{{ vmware_vm_network_name }}"
       wait_for_ip_address: "{{ vmware_vm_network_name }}"
