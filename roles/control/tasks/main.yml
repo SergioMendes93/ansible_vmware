@@ -1,0 +1,12 @@
+---
+- name: install packages
+  apt: name={{ item }} state=present
+  with_items:
+    - python-pip
+
+- name: install pip packages
+  pip: name={{ item }} extra_args=--upgrade
+  with_items:
+    - pysphere
+    - pyvmomi
+    - ansible

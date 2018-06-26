@@ -1,0 +1,10 @@
+- hosts: all
+  become: no
+  connection: local
+
+  tasks:
+
+  - name: create kickstart file
+    template:
+      src: kickstart.cfg.j2
+      dest: "{{ playbook_dir }}/build/{{ inventory_hostname }}.cfg"

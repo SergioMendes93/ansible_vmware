@@ -1,0 +1,3 @@
+vmware_root_pass: "{{ vault_root_pass }}"
+vmware_root_user: root
+vmware_hostname: 192.168.100.128
