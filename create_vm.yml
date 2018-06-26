@@ -1,5 +1,5 @@
 ---
-- hosts: web
+- hosts: localhost
   user: remote
   gather_facts: false
   connection: local
