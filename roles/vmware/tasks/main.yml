@@ -1,30 +1,30 @@
 ---
 - name: Create a VM
     vmware_guest:
-      hostname: 192.168.100.128
+      hostname: "{{ vmware_hostname }}"
       customization:
-        hostname: testvm_9
-      username: root
-      password: Painatal1@
+        hostname: "{{ vmware_vm_name }}"
+      username: "{{ vmware_root_user }}"
+      password: "{{ vmware_root_pass }}"
       validate_certs: no
       folder: /
-      name: testvm_9
-      guest_id: ubuntu64Guest
+      name: "{{ vmware_vm_name }}"
+      guest_id: "{{ vmware_vm_guest_id }}"
       state: poweredon
       cdrom:
         type: iso
-        iso_path: "[datastore1] ubuntu-16.04.3-server-amd64.iso"
+        iso_path: "{{ vmware_vm_iso_path }}"
       disk:
-      - size_gb: 10
-        type: thin
-        datastore: datastore1
+      - size_gb: "{{ vmware_vm_disk_size }}"
+        type: "{{ vmware_vm_disk_type }}"
+        datastore: "{{ vmware_datastore }}"
       hardware:
-        memory_mb: 1024
-        num_cpus: 2
-        num_cpu_cores_per_socket: 2
-        scsi: paravirtual
+        memory_mb: "{{ vmware_vm_memory }}"
+        num_cpus: "{{ vmware_vm_num_cpus }}"
+        num_cpu_cores_per_socket: "{{ vmware_vm_num_cpus_socket }}"
+        scsi: "{{ vmware_vm_scsi }}"
       networks:
-      - name: VM Network
-      wait_for_ip_address: no
-    delegate_to: localhost
-    register: deploy
+      -  name: VM Network
+      wait_for_ip_address: "{{ vmware_vm_network_name }}"
+      delegate_to: localhost
+      register: deploy
