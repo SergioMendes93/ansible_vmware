@@ -1,5 +1,5 @@
 ---
 - hosts: all
   gather_facts: false
-  tasks: 
-  - include: roles/vmware/tasks/remove_vm.yml
+  roles: 
+  - { role: vmware, tags: remove_vm }
