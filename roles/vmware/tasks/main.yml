@@ -3,12 +3,12 @@
   vmware_guest:
     hostname: "{{ vmware_hostname }}"
     customization:
-      hostname: "{{ vmware_vm_name }}"
+      hostname: "{{ item }}"
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
     validate_certs: no
     folder: /
-    name: "{{ vm_names[0] }}"
+    name: "{{ item }}"
 #    name: "{{ vmware_vm_name }}"
     guest_id: "{{ vmware_vm_guest_id }}"
     state: poweredon
@@ -27,3 +27,5 @@
     networks:
     -  name: "{{ vmware_vm_network_name }}"
     wait_for_ip_address: no
+  with_items:
+    - "{{ vmware_vm_name }}"

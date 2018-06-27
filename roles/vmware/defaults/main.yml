@@ -1,6 +1,7 @@
 ---
 vmware_hostname: 192.168.100.128
-vmware_vm_name: testvm_12
+vmware_vm_name: 
+  - testvm_12
 vmware_vm_guest_id: ubuntu64Guest
 vmware_vm_iso_path: "[datastore1] ubuntu-16.04.3-server-amd64.iso"
 vmware_vm_disk_size: 10
