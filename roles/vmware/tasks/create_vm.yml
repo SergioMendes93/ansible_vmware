@@ -1,5 +1,5 @@
 ---
-- name: Creating VM: "{{ item }}"
+- name: Creating VMs
   vmware_guest:
     hostname: "{{ vmware_hostname }}"
     customization:
