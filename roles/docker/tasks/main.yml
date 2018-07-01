@@ -1,0 +1,4 @@
+---
+# tasks file for docker
+- name: Testing connection
+  command: pwd
