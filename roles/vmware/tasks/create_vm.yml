@@ -9,7 +9,6 @@
     validate_certs: no
     folder: /
     name: "{{ item }}"
-#    name: "{{ vmware_vm_name }}"
     guest_id: "{{ vmware_vm_guest_id }}"
     state: poweredon
     cdrom:
@@ -28,7 +27,7 @@
     - name: "{{ vmware_vm_network_name }}"
       type: static
       ip: "{{ vmware_vm_ip }}"
-       
+      netmask: "{{ vmware_vm_netmask }}"
     wait_for_ip_address: no
   with_items:
     - "{{ vmware_vm_name }}"

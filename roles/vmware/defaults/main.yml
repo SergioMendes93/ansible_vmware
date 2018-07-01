@@ -1,6 +1,7 @@
 ---
 vmware_hostname: 192.168.100.128
 vmware_vm_ip: 192.168.100.140
+vmware_vm_netmask: 255.255.255.0
 vmware_vm_name: 
   - testvm_1
 vmware_vm_guest_id: ubuntu64Guest
