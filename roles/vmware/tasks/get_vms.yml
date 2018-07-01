@@ -1,0 +1,7 @@
+---
+- name: Get VMs currently configured on VMware
+  vmware_guest_facts: 
+    hostname: "{{ vmware_hostname }}" 
+    username: "{{ vmware_root_user }}"
+    password: "{{ vmware_root_pass }}"
+    validate_certs: no
