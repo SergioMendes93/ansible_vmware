@@ -25,7 +25,10 @@
       num_cpu_cores_per_socket: "{{ vmware_vm_num_cpus_socket }}"
       scsi: "{{ vmware_vm_scsi }}"
     networks:
+      type: static
+      ip: "{{ vmware_vm_ip }}"
     -  name: "{{ vmware_vm_network_name }}"
+       
     wait_for_ip_address: no
   with_items:
     - "{{ vmware_vm_name }}"
