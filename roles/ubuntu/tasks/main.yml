@@ -1,4 +1,4 @@
 ---
 # tasks file for ubuntu
-- import_tasks: configure_vm.yml
-  tags: [ 'configure_vm' ]
+- import_tasks: install_packages.yml
+  tags: [ 'install' ]

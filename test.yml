@@ -1,7 +1,0 @@
----
-- hosts: Ubuntu_VMs
-  gather_facts: false
-
-  tasks:
-  - name: testing connecton
-    command: pwd
