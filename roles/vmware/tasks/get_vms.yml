@@ -7,7 +7,7 @@
     datacenter: ha-datacenter
     name: "{{ item }}"
     validate_certs: no
-    register: vm_facts
+  register: vm_facts
   with_items: 
     - "{{ vmware_vm_name }}"
   
