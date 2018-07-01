@@ -7,3 +7,5 @@
   tags: [ 'get_vms' ]
 - import_tasks: start_vm.yml
   tags: [ 'start_vm' ]
+- import_tasks: configure_vm.yml
+  tags: [ 'configure_vm' ]

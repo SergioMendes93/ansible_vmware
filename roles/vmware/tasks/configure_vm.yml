@@ -1,0 +1,17 @@
+---
+- name: Starting VMs
+  vmware_vm_shell:
+    hostname: "{{ vmware_hostname }}"
+    username: "{{ vmware_root_user }}"
+    password: "{{ vmware_root_pass }}"
+    datacenter: ha-datacenter
+    folder: /  
+    validate_certs: no
+    vm_id: "{{ ansible_host }}"
+    vm_username: "{{ ansible_user }}
+    vm_password: "{{ ansible_password }}" 
+    vm_shell: /bin/apt
+    vm_shell_args: " install {{ item }} "
+    vm_shell_cwd: "/tmp"
+  with_items:
+    - "{{ packages }}"
