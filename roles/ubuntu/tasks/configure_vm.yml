@@ -2,7 +2,7 @@
 - name: Installing apt packages
   apt: name={{ item }} state=present update_cache=yes
   with_items: 
-    - python3  
+    - python  
 
 - name: test command
   command: pwd
