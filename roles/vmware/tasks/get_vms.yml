@@ -4,4 +4,5 @@
     hostname: "{{ vmware_hostname }}" 
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
+    datacenter: ha-datacenter
     validate_certs: no
