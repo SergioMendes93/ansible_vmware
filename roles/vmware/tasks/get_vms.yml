@@ -5,5 +5,7 @@
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
     datacenter: ha-datacenter
-    folder: /
+    name: "{{ item }}"
     validate_certs: no
+  with_item: 
+    - "{{ vmware_vm_name }}"
