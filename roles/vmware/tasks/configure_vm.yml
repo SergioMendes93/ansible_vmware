@@ -13,5 +13,7 @@
     vm_shell: /usr/bin/sudo
     vm_shell_args: " apt-get install {{ item }} "
     vm_shell_cwd: "/tmp"
+    vm_shell_env:
+      - "PATH=/bin:/usr/local/bin:/usr/sbin:/usr/bin"
   with_items:
     - "{{ packages }}"
