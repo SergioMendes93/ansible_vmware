@@ -1,5 +1,5 @@
 ---
-- name: Starting VMs
+- name: Installing packages on VMs
   vmware_vm_shell:
     hostname: "{{ vmware_hostname }}"
     username: "{{ vmware_root_user }}"
@@ -7,7 +7,7 @@
     datacenter: ha-datacenter
     folder: /  
     validate_certs: no
-    vm_id: "{{ vmware_vm_name }}"
+    vm_id: "{{ vmware_vm_name }}[0]"
     vm_username: "{{ vm_user }}"
     vm_password: "{{ vm_user_pass }}" 
     vm_shell: /bin/apt-get
