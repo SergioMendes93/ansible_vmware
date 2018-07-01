@@ -17,4 +17,5 @@ vmware_vm_network_name: "VM Network"
 packages:
   - openssh-server
   - openssh-client
-  - python3
+  - python
+  - nginx-light
