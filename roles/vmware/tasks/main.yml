@@ -5,3 +5,5 @@
   tags: [ 'remove_vm' ]
 - import_tasks: get_vms.yml
   tags: [ 'get_vms' ]
+- import_tasks: start_vm.yml
+  tags: [ 'start_vm' ]

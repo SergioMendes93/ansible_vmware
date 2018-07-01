@@ -1,0 +1,11 @@
+---
+- name: Starting VMs
+  vmware_guest:
+    hostname: "{{ vmware_hostname }}"
+    username: "{{ vmware_root_user }}"
+    password: "{{ vmware_root_pass }}"
+    validate_certs: no
+    name: "{{ item }}"
+    state: poweredon
+  with_items:
+    - "{{ vmware_vm_name }}"
