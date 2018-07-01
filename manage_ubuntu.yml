@@ -1,0 +1,5 @@
+---
+- hosts: Ubuntu_VMs
+  gather_facts: false
+  roles:
+    - ubuntu

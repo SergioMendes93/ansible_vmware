@@ -1,0 +1,4 @@
+---
+# tasks file for ubuntu
+- name: test command
+  command: pwd
