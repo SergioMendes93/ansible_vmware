@@ -15,7 +15,6 @@ vmware_vm_num_cpus_socket: 2
 vmware_vm_scsi: paravirtual
 vmware_vm_network_name: "VM Network"
 packages:
-  - update
   - openssh-server
   - openssh-client
-  - python
+  - python3

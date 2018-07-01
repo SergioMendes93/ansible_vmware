@@ -10,8 +10,8 @@
     vm_id: "{{ vmware_vm_name[0] }}"
     vm_username: "{{ vm_user }}"
     vm_password: "{{ vm_user_pass }}" 
-    vm_shell: /usr/bin/apt-get
-    vm_shell_args: " install {{ item }} "
+    vm_shell: /usr/bin/sudo
+    vm_shell_args: " apt-get install {{ item }} "
     vm_shell_cwd: "/tmp"
   with_items:
     - "{{ packages }}"
