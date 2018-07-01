@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: Ubuntu_VMs
   gather_facts: false
 
   tasks:
