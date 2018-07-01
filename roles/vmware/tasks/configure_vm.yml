@@ -7,9 +7,9 @@
     datacenter: ha-datacenter
     folder: /  
     validate_certs: no
-    vm_id: "{{ ansible_host }}"
-    vm_username: "{{ ansible_user }}
-    vm_password: "{{ ansible_password }}" 
+    vm_id: "{{ vmware_vm_name }}"
+    vm_username: "{{ vm_user }}
+    vm_password: "{{ vm_user_pass }}" 
     vm_shell: /bin/apt-get
     vm_shell_args: " install {{ item }} "
     vm_shell_cwd: "/tmp"
