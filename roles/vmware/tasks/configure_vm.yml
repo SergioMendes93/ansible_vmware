@@ -10,7 +10,7 @@
     vm_id: "{{ ansible_host }}"
     vm_username: "{{ ansible_user }}
     vm_password: "{{ ansible_password }}" 
-    vm_shell: /bin/apt
+    vm_shell: /bin/apt-get
     vm_shell_args: " install {{ item }} "
     vm_shell_cwd: "/tmp"
   with_items:
