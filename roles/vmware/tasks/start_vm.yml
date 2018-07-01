@@ -7,5 +7,6 @@
     validate_certs: no
     name: "{{ item }}"
     state: poweredon
+    folder: /
   with_items:
     - "{{ vmware_vm_name }}"
