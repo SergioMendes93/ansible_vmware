@@ -11,6 +11,8 @@
     vm_username: "{{ vm_user }}"
     vm_password: "{{ vm_user_pass }}" 
     vm_shell: /bin/apt-get
+    vm_shell_env:
+      - "PATH=/bin"
     vm_shell_args: " install {{ item }} "
     vm_shell_cwd: "/tmp"
   with_items:
