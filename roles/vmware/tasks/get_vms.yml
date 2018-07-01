@@ -12,5 +12,5 @@
     - "{{ vmware_vm_name }}"
   
 
-- debug: msg="{{ item.stdout }}"
+- debug: msg="{{ item }}"
   with_items: "{{ vm_facts.results }}"
