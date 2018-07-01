@@ -1,4 +1,4 @@
 ---
 # tasks file for ubuntu
-- name: test command
-  command: pwd
+- import_tasks: configure_vm.yml
+  tags: [ 'configure_vm' ]
