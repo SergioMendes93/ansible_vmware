@@ -1,2 +1,9 @@
 ---
-# handlers file for docker
+- name: restart apache2
+  service: name=apache2 state=restarted
+
+- name: restart mysql
+  service: name=mysql state=restarted
+
+- name: restart nginx
+  service: name=nginx state=restarted

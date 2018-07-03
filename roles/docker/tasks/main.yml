@@ -2,3 +2,15 @@
 # tasks file for docker
 - import_tasks: test_connection.yml
   tags: [ 'testing' ]
+
+- import_tasks: mysql.yml
+  tags: [ 'mysql' ]
+
+- import_tasks: apache2.yml
+  tags: [ 'apache2' ]
+
+- import_tasks: demo_app.yml
+  tags: [ 'apache2' ]
+
+- import_tasks: nginx.yml
+  tags: [ 'nginx' ]

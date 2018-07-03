@@ -1,2 +1,10 @@
 ---
-# defaults file for docker
+db_name: myapp 
+db_user_name: dbuser 
+db_user_pass: dbpass
+db_user_host: localhost
+
+sites:
+  myapp:
+    frontend: 80
+    backend: 80

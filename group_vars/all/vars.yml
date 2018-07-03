@@ -3,3 +3,7 @@ vmware_root_pass: "{{ vmware_password }}"
 vmware_root_user: root
 vm_user: ubuntu
 vm_user_pass: "{{ vm_password }}"
+
+db_name: demo 
+db_user: demo
+db_pass: "{{ vault_db_pass }}"
