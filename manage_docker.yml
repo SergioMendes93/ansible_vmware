@@ -20,5 +20,5 @@
 
   roles:
     - nginx
-
+  tags: [ 'loadbalancer' ]
 
