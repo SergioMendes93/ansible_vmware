@@ -4,7 +4,7 @@
 
   roles:
     - docker
-      tags: [ 'datatabase' ]
+  tags: [ 'datatabase' ]
 
 - hosts: webserver
   become: true
@@ -12,7 +12,7 @@
 
   roles:
     - docker
-      tags: [ 'webserver' ]
+  tags: [ 'webserver' ]
 
 - hosts: loadbalancer
   become: true
@@ -20,6 +20,6 @@
 
   roles:
     - docker
-      tags: [ 'loadbalancer' ]
+  tags: [ 'loadbalancer' ]
 
 
