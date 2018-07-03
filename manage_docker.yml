@@ -3,7 +3,7 @@
   become: true
 
   roles:
-    - { role: docker, tags: [ 'datatabase' ] }
+    - { role: docker, tags: [ 'database' ] }
 
 - hosts: webserver
   become: true
