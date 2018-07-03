@@ -3,23 +3,20 @@
   become: true
 
   roles:
-    - docker
-  tags: [ 'datatabase' ]
+    - { role: docker, tags: [ 'datatabase' ] }
 
 - hosts: webserver
   become: true
   gather_facts: false
 
   roles:
-    - docker
-  tags: [ 'webserver' ]
+    - { roles: docker, tags: [ 'webserver' ] }
 
 - hosts: loadbalancer
   become: true
   gather_facts: false
 
   roles:
-    - docker
-  tags: [ 'loadbalancer' ]
+    - { roles: docker, tags: [ 'loadbalancer' ] }
 
 
