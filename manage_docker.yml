@@ -10,13 +10,13 @@
   gather_facts: false
 
   roles:
-    - { roles: docker, tags: [ 'webserver' ] }
+    - { role: docker, tags: [ 'webserver' ] }
 
 - hosts: loadbalancer
   become: true
   gather_facts: false
 
   roles:
-    - { roles: docker, tags: [ 'loadbalancer' ] }
+    - { role: docker, tags: [ 'loadbalancer' ] }
 
 
