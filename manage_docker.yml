@@ -3,25 +3,22 @@
   become: true
   tasks:
 
-  - include: roles/docker/tasks/mysql.yml
-  tags: [ 'database' ]
+  roles:
+    - mysql
 
 - hosts: webserver
   become: true
   gather_facts: false
 
-  tasks:
-  - include: roles/docker/tasks/apache.yml
-             roles/docker/tasks/demo_app.yml
-  tags: [ 'webserver ']
+  roles:
+     - apache2
+     - demo_app
 
 - hosts: loadbalancer
   become: true
   gather_facts: false
 
-  tasks:
-  - include: roles/docker/tasks/nginx.yml
-  tags: [ 'loadbalancer' ]
-
+  roles:
+    - nginx
 
 

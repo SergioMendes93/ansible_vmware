@@ -1,3 +1,0 @@
----
-- name: Testing connection to Docker hosts
-  command: hostname
