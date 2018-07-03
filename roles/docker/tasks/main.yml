@@ -4,13 +4,13 @@
   tags: [ 'testing' ]
 
 - import_tasks: mysql.yml
-  tags: [ 'mysql' ]
+  tags: [ 'database' ]
 
 - import_tasks: apache2.yml
-  tags: [ 'apache2' ]
+  tags: [ 'webserver' ]
 
 - import_tasks: demo_app.yml
-  tags: [ 'apache2' ]
+  tags: [ 'webserver' ]
 
 - import_tasks: nginx.yml
-  tags: [ 'nginx' ]
+  tags: [ 'loadbalancer' ]
