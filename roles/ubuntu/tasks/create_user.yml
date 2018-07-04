@@ -2,7 +2,7 @@
 - name: Creating users
   user:
     name: "{{ item.name }}"
-    password: "{{ item.password | password_hash('sha512') }}"
+    password: "{{ ubuntu_default_password }}"
     group: "{{ item.group }}"
     create_home: yes
     state: present
