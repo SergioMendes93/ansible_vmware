@@ -9,3 +9,5 @@
   tags: [ 'start_vm' ]
 - import_tasks: configure_vm.yml
   tags: [ 'configure_vm' ]
+- import_tasks: stop_vm.yml
+  tags: [ 'stop_vm']
