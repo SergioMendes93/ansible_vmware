@@ -1,0 +1,10 @@
+---
+- name: Creating users
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    group: "{{ item.group }}"
+    create_home: yes
+    state: present
+  with_items: 
+    - "{{ user_details }}"
