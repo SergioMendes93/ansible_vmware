@@ -3,3 +3,5 @@
   user:
     name: "{{ item }}"
     state: present
+  with_items:
+    - "{{ group_name }}"
