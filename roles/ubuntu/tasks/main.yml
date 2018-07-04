@@ -3,5 +3,11 @@
 - import_tasks: install_packages.yml
   tags: [ 'install' ]
 
+- import_tasks: create_group.yml
+  tags: [ 'create_group' ]
+
 - import_tasks: create_user.yml
   tags: [ 'create_user' ]
+
+- import_tasks: manage_permissions.yml
+  tags: [ 'manage_permissions' ]

@@ -1,0 +1,9 @@
+---
+- name: Changing permissions
+  file:
+    path: "{{ item.path }}"
+    ownwer: "{{ item.owner }}"
+    group: "{{ item.group_owner }}"
+    mode: "{{ item.permissions }}"
+    recurse: yes
+  with_items: "{{ file }}"

@@ -1,0 +1,5 @@
+---
+- name: Creating groups
+  user:
+    name: "{{ item }}"
+    state: present
