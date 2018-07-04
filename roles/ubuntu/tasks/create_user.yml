@@ -6,5 +6,6 @@
     group: "{{ item.group }}"
     create_home: yes
     state: present
+    update_password: on_create
   with_items: 
     - "{{ user_details }}"
