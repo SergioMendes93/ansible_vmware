@@ -1,14 +1,14 @@
 ---
 - name: Creating VMs
   vmware_guest:
-    hostname: "{{ item.vmware_hostname }}"
+    hostname: "{{ vmware_hostname }}"
     customization:
-      hostname: "{{ item.vmware_hostname }}"
+      hostname: "{{ item.vmware_vm_name }}"
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
     validate_certs: no
     folder: /
-    name: "{{ item.vmware_hostname }}"
+    name: "{{ item.vmware_vm_name }}"
     guest_id: "{{ item.vmware_vm_guest_id }}"
     state: poweredon
     cdrom:
