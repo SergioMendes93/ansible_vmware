@@ -1,33 +1,33 @@
 ---
 - name: Creating VMs
   vmware_guest:
-    hostname: "{{ vmware_hostname }}"
+    hostname: "{{ item.vmware_hostname }}"
     customization:
-      hostname: "{{ item }}"
+      hostname: "{{ item.vmware_hostname }}"
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
     validate_certs: no
     folder: /
-    name: "{{ item }}"
-    guest_id: "{{ vmware_vm_guest_id }}"
+    name: "{{ item.vmware_hostname }}"
+    guest_id: "{{ item.vmware_vm_guest_id }}"
     state: poweredon
     cdrom:
       type: iso
-      iso_path: "{{ vmware_vm_iso_path }}"
+      iso_path: "{{ item.vmware_vm_iso_path }}"
     disk:
-    - size_gb: "{{ vmware_vm_disk_size }}"
-      type: "{{ vmware_vm_disk_type }}"
-      datastore: "{{ vmware_datastore }}"
+    - size_gb: "{{ item.vmware_vm_disk_size }}"
+      type: "{{ item.vmware_vm_disk_type }}"
+      datastore: "{{ item.vmware_datastore }}"
     hardware:
-      memory_mb: "{{ vmware_vm_memory }}"
-      num_cpus: "{{ vmware_vm_num_cpus }}"
-      num_cpu_cores_per_socket: "{{ vmware_vm_num_cpus_socket }}"
-      scsi: "{{ vmware_vm_scsi }}"
+      memory_mb: "{{ item.vmware_vm_memory }}"
+      num_cpus: "{{ item.vmware_vm_num_cpus }}"
+      num_cpu_cores_per_socket: "{{ item.vmware_vm_num_cpus_socket }}"
+      scsi: "{{ item.vmware_vm_scsi }}"
     networks:
-    - name: "{{ vmware_vm_network_name }}"
+    - name: "{{ item.vmware_vm_network_name }}"
       type: static
-      ip: "{{ vmware_vm_ip }}"
-      netmask: "{{ vmware_vm_netmask }}"
+      ip: "{{ item.vmware_vm_ip }}"
+      netmask: "{{ item.vmware_vm_netmask }}"
     wait_for_ip_address: no
   with_items:
-    - "{{ vmware_vm_name }}"
+    - "{{ vmware_vm }}"
