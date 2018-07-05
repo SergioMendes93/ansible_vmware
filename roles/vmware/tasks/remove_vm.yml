@@ -1,7 +1,7 @@
 ---
-vars_prompt:
-  - name: "vm_name"
-    prompt: "Type the name of the VM to remove"
+- name:  Get user input for VM to remove
+  prompt: "Type the name of the VM to remove"
+  register: vm_name
 
 - name: Stopping VMs
   vmware_guest:
