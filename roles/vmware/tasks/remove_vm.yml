@@ -1,16 +1,14 @@
 ---
-- pause:  
-    prompt: "Type the name of the VM to remove"
-  register: vm_name
-
 - name: Stopping VMs
   vmware_guest:
     hostname: "{{ vmware_hostname }}"
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
     validate_certs: no
-    name: "{{ vm_name }}"
+    name: "{{ item }}"
     state: poweredoff
+  with_items:
+    - "{{ vmware_vm_name }}"
 
 - name: Removing VMs
   vmware_guest:
@@ -18,5 +16,7 @@
     username: "{{ vmware_root_user }}"
     password: "{{ vmware_root_pass }}"
     validate_certs: no
-    name: "{{ vm_name }}"
+    name: "{{ item }}"
     state: absent
+  with_items:
+    - "{{ vmware_vm_name }}"
