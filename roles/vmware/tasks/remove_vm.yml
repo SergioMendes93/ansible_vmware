@@ -1,6 +1,6 @@
 ---
-- name:  Get user input for VM to remove
-  prompt: "Type the name of the VM to remove"
+- pause:  
+    prompt: "Type the name of the VM to remove"
   register: vm_name
 
 - name: Stopping VMs
