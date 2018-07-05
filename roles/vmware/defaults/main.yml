@@ -1,19 +1,9 @@
 ---
-vmware_hostname: 192.168.100.128
-vmware_vm_ip: 192.168.100.140
-vmware_vm_netmask: 255.255.255.0
-vmware_vm_name: 
-  - testvm_1
-vmware_vm_guest_id: ubuntu64Guest
-vmware_vm_iso_path: "[datastore1] ubuntu-16.04.3-server-amd64.iso"
-vmware_vm_disk_size: 10
-vmware_vm_disk_type: thin
-vmware_datastore: datastore1
-vmware_vm_memory: 1024
-vmware_vm_num_cpus: 2
-vmware_vm_num_cpus_socket: 2
-vmware_vm_scsi: paravirtual
-vmware_vm_network_name: "VM Network"
+vmware_vm:
+  - {{ vmware_hostname: 192.168.100.128, vmware_vm_ip: 192.168.100.141, vmware_vm_netmask: 255.255.255.0, vmware_vm_name: testvm_7, vmware_vm_guest_id: ubuntu64Guest,
+    vmware_vm_iso_path: "[datastore1] ubuntu-16.04.3-server-amd64.iso", vmware_vm_disk_size: 10, vmware_vm_disk_type: thin, vmware_datastore: datastore1, vmware_vm_memory: 1024,
+    vmware_vm_num_cpus: 2, vmware_vm_num_cpus_socket: 2, vmware_vm_scsi: paravirtual, vmware_vm_network_name: "VM Network" }}
+
 packages:
   - openssh-server
   - openssh-client
