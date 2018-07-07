@@ -15,6 +15,7 @@ vmware_vm:
       vmware_vm_network_name: "VM Network" }
 
 vmware_hostname: 192.168.100.128
+vmware_vm_name: testvm_1
 
 packages:
   - openssh-server
