@@ -5,6 +5,7 @@
 
   roles:
     - mysql
+  tags: [ 'database' ]
 
 - hosts: webserver
   become: true
@@ -13,6 +14,7 @@
   roles:
      - apache2
      - demo_app
+  tags: [ 'webserver' ]
 
 - hosts: loadbalancer
   become: true
